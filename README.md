@@ -1,30 +1,38 @@
 # Примерна реализация на адаптер
 Настоящият документ описва разработката на примерен адаптер с име Reference от компанията Contoso.
 
-## Изграждане на основната структура от проекти
-Създават се следните проекти:
-* RegiX.ReferenceAdapter (.NET standard) - RegiX.DaeuTestAdapter
-* RegiX.ReferenceAdapter.Mock (.NET standard) - RegiX.DaeuTestAdapter.Mock
-* RegiX.ReferenceAdapter.Test (MSTest .NET Core проект) - RegiX.DaeuTestAdapter.Test
-В зависимост от спецификата на адаптерите е възможно използването на .NET Framework за някой или всички проекти.
-След създаването на всеки проект се премахват класовете
-->RegiX.ReferenceAdapter се преименъва на RegiX.DaeuTestAdapter аналогично и за останалите проекти с "-" след дефолтния. 
- Пример RegiX.ReferenceAdapter (.NET standard) на RegiX.DaeuTestAdapter. 
+## Съдържание
+
+<!-- TOC -->
+- [Изграждане на основна структура](#реализация)
+- [Адрес на услугата](#адрес-на-услугата)
+<!-- /TOC -->
+
+
+## 1. Изграждане на основната структура на проекти
+В настоящата инструкция, за разработка на адаптерите се използва .NET Framework. Създават се три проекта със следните типове и примерни имена:
+
+* 1. RegiX.**Name**Adapter с тип Class Library (.NET Standard)
+[//]: # (5.1. -- 5.1.5.)
+* 2. RegiX.**Name**Adapter.Mock с тип Class Library (.NET Standard)
+[//]: # (5.2.)
+* 3. RegiX.**Name**Adapter.Test с тип MSTest Test Project (.NET Core)
+ [//]: # (5.3.)
+Премахват се автоматично създадените класове за всеки от създадените проекти.
+
+### 1.1. Промяна на DefaultNamespace
+Променя се DefaultNamespace, така че да съдържат името на компанията разработчик:
+  * **Company**.RegiX.**Name**Adapter
+  * **Company**.RegiX.**Name**Adapter.Mock
+  * **Company**.RegiX.**Name**Adapter.Test
+Структурата на Namespace е: **Company**.RegiX.**Name**Adapter
+  Пример: Contoso.Regix.ReferenceAdapter
+Редактира се описанието на информацията за разработчик на проекта: auhtor, company, description.
 
 
 
-Променят се DefaultNamespace-ите, така че да съдържат името на компанията разработчик:
-* Contoso.RegiX.DaeuTestAdapter
-* Contoso.RegiX.DaeuTestAdapter.Mock
-* Contoso.RegiX.DaeuTestAdapter.Test
 
-
-
-Структурата на Namespace-ите е:
-* COMPANY.ReiX.ADAPTER_NAMEAdapter
-
-Редактира се описанието на информацията за разработчиците на проекта (auhtor/company/description).
-Добавяне на описание включващо необходими файлове в доставяния пакет:
+* Добавяне на описание включващо необходими файлове в доставяния пакет:
 * RegiX.ReferenceAdapter проектът - RegiX.RegiX.DaeuTestAdapter Adapter 
 ```xml
   <ItemGroup>
