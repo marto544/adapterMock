@@ -97,11 +97,10 @@
 
 Създайте спрямо описанието в стандарта за раработка на адаптери следние файлове, които да служат като класове, в съответните директории.  
 
-* RegiX.**Name**Adapter\RegiX.**Name**Adapter\AdapterService\I**Name**Adapter.cs 
-* RegiX.**Name**Adapter\RegiX.**Name**Adapter\AdapterService\NameAdapter.cs
-
-* RegiX.**Name**Adapter\RegiX.**Name**Adapter\APIService\I**Name**API.cs
-* RegiX.**Name**Adapter\RegiX.**Name**Adapter\APIService\NameAPI.cs
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\AdapterService\I**Name**Adapter.cs`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\AdapterService\NameAdapter.cs`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\APIService\I**Name**API.cs`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\APIService\**Name**API.cs`
 
 ### 3.1. Добавяне на методи (операции) в класове
 
@@ -199,3 +198,86 @@ namespace DAEU.RegiX.SampleAdapter.AdapterService
     }
 }
 ```
+
+* **Name**API.cs
+
+```csharp
+using DAEU.RegiX.SampleAdapter.AdapterService;
+using System.ComponentModel.Composition;
+using TechnoLogica.RegiX.Adapters.Common;
+using TechnoLogica.RegiX.Adapters.Common.ExportExtension;
+using TechnoLogica.RegiX.Common;
+using TechnoLogica.RegiX.Common.TransportObjects;
+
+namespace DAEU.RegiX.SampleAdapter.APIService
+{
+    [ExportFullName(typeof(ISampleAPI), typeof(IAPIService))]
+    [Export(typeof(IAPIService))]
+    public class SampleAPI : BaseAPIService, ISampleAPI
+    {
+        public ServiceResultDataSigned<ExampleRequest, ExampleResponse> Example(ServiceRequestData<ExampleRequest> argument)
+        {
+            return AdapterClient.Execute<ISampleAdapter, ExampleRequest, ExampleResponse>(
+                (i, r, a, o) => i.Example(r, a, o),
+                argument);
+        }
+
+        public ServiceResultDataSigned<ExampleRequest, ExampleResponse> Example2(ServiceRequestData<ExampleRequest> argument)
+        {
+            return AdapterClient.Execute<ISampleAdapter, ExampleRequest, ExampleResponse>(
+                (i, r, a, o) => i.Example2(r, a, o),
+                argument);
+        }
+
+        public ServiceResultDataSigned<ExampleRequest, ExampleResponse> Example3(ServiceRequestData<ExampleRequest> argument)
+        {
+            return AdapterClient.Execute<ISampleAdapter, ExampleRequest, ExampleResponse>(
+                (i, r, a, o) => i.Example3(r, a, o),
+                argument);
+        }
+    }
+}
+```
+
+* I**Name**API.cs
+
+```csharp
+using System.ComponentModel;
+using System.ServiceModel;
+using TechnoLogica.RegiX.Adapters.Common.Attributes;
+using TechnoLogica.RegiX.Common;
+using TechnoLogica.RegiX.Common.TransportObjects;
+
+namespace DAEU.RegiX.SampleAdapter.APIService
+{
+    [ServiceContract]
+    [XmlSerializerFormat]
+    [Description("API на примерен адаптер")]
+    public interface ISampleAPI : IAPIService
+    {
+        [OperationContract]
+        [Description("Изпълнява примерна услуга 1")]
+        ServiceResultDataSigned<ExampleRequest, ExampleResponse> Example(ServiceRequestData<ExampleRequest> argument);
+
+        [OperationContract]
+        [Description("Изпълнява примерна услуга 2")]
+        [Info(requestXSD: "ExampleRequest.xsd", responseXSD: "ExampleResponse.xsd",
+            sampleRequest: "ExampleRequest.xml",
+            sampleResponse: "ExampleResponse.xml",
+            requestXSLT: "ExampleRequest.xslt",
+            responseXSLT: "ExampleResponse.xslt", metaDataXML: "Example.xml")]
+        ServiceResultDataSigned<ExampleRequest, ExampleResponse> Example2(ServiceRequestData<ExampleRequest> argument);
+
+        [OperationContract]
+        [Description("Изпълнява примерна услуга 3")]
+        [Info(requestXSD: "ExampleRequest.xsd", responseXSD: "ExampleResponse.xsd",
+            sampleRequest: "ExampleRequest.xml",
+            sampleResponse: "ExampleResponse.xml",
+            requestXSLT: "ExampleRequest.xslt",
+            responseXSLT: "ExampleResponse.xslt", metaDataXML: "Example.xml")]
+        ServiceResultDataSigned<ExampleRequest, ExampleResponse> Example3(ServiceRequestData<ExampleRequest> argument);
+    }
+}
+```
+
+Класовете I**Name**API.cs и **Name**API.cs работят на ядрото на RegiX. I**Name**Adapter.cs и NameAdapter.cs работят при регистъра, за който разработваме адаптер.
