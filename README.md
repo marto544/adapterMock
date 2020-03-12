@@ -77,7 +77,7 @@
 * XMLSamples\RegiX.**Name**Adapter
 * XMLSchemas\RegiX.**Name**Adapter
 
-#### 2.3. Инсталиране на пакети
+#### 2.3. Добавяне на пакети
 
 ##### 2.3.1. Изтегляне на необходимите пакети, които ще бъдат инсталирани
 
@@ -86,9 +86,19 @@
   Добавете път към адрес на местоположение на Nuget пакети, като изберете Tools, Nuget Package Manager, Packet Manager Settings.
   От менюто в ляво се избира: Pacakage Sources. Добавянето на пътя към Nuget пакетите става чрез натискането на бутона плюс и след това попълването на Името и в полето Source се посочва пътя към пакетите. 
 
-##### 2.3.2.
+##### 2.3.2. Инсталиране на пакети
 След задаване на адрес на хранилище с Nuget пакети, е необходимо те да бъдат инсталирани. За проектите добавете следните референции, като натиснете десен бутон върху името на проекта и изберете Manage NuGet Packages от контекстното меню:
 
 * **RegiX.Adapters.Common** в проект RegiX.**Name**Adapter
 * **RegiX.Adapters.Mocks** в проект RegiX.**Name**Adapter.Mock
 * **RegiX.Adapters.TestUtils** в проект RegiX.**Name**Adapter.Test
+
+### 3. Създаване на класове
+
+Създайте спрямо описанието в стандарта за раработка на адаптери следние файлове, които да служат като класове, в съответните директории.  
+
+* RegiX.**Name**Adapter\RegiX.**Name**Adapter\AdapterService\I**Name**Adapter.cs 
+* RegiX.**Name**Adapter\RegiX.**Name**Adapter\AdapterService\NameAdapter.cs
+
+* APIService\I**Name**API.cs - APIService\IDaeuTestAPI.cs
+* APIService\**Name**API.cs - APIService\DaeuTestAPI.cs
