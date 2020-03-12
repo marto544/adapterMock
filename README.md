@@ -1,5 +1,5 @@
 # Примерна реализация на адаптер
-Настоящият документ описва стъпките за разработката на примерен адаптер за RegiX.
+Настоящият документ описва примерни стъпки за разработка на адаптер за RegiX.
 
 ## Съдържание
 
@@ -63,13 +63,11 @@
 ## 2. Добавяне на зависимости чрез инсталация на Nuget пакети
 
 ### 2.1. Създаване на nuspec файлове 
-
 За работа по създадените проекти с Nuget Packet Manager, необходимо е да генерирате XML метаописания. В директориите на проектите RegiX.**Name**Adapter и RegiX.**Name**Adapter.Mock изпълнете командата `nuget spec`, за да създадете .nuspec файлове. Последна версия на nuget.exe ще откриете на адрес: https://www.nuget.org/downloads.
 
 Редактирайте съдържанието на .nuspec файловете `RegiX.**Name**Adapter.nuspec` и `RegiX.**Name**Adapter.Mock`, като изтриете елементите `<licenceURL>, <projectURL>, <iconURL>,<copyright2020>, <tags>`.
 
 ### 2.2. Разширяване структурата на проектите
-
 В директорията на проект RegiX.**Name**Adapter, създайте следните поддиректории:
 * AdapterService
 * APIService
@@ -80,9 +78,6 @@
 ### 2.3. Добавяне на пакети
 
 #### 2.3.1. Изтегляне на необходимите пакети, които ще бъдат инсталирани
-
-Придобиването на необходимите пакети за работата на адаптера може да стане по следните начини:
-* Изтеглянето им на локалната машина и посочването на пътя към тях, което става по следния начин:
   Добавете път към адрес на местоположение на Nuget пакети, като изберете Tools, Nuget Package Manager, Packet Manager Settings.
   От менюто в ляво се избира: Pacakage Sources. Добавянето на пътя към Nuget пакетите става чрез натискането на бутона плюс и след това попълването на Името и в полето Source се посочва пътя към пакетите. 
 
@@ -281,3 +276,22 @@ namespace DAEU.RegiX.SampleAdapter.APIService
 ```
 
 Класовете I**Name**API.cs и **Name**API.cs работят на ядрото на RegiX. I**Name**Adapter.cs и NameAdapter.cs работят при регистъра, за който разработваме адаптер.
+
+## 4. Добавяне на схеми, метаданни, трансформации
+
+Създайте следние файлове, в съответните директории на вашия проект: 
+
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\ExampleRequest.designer.cs`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\ExampleRequest.xsd`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\ExampleResponse.designer.cs`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\ExampleResponse.xsd`
+
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\Transformations\ExampleRequest.sps`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\Transformations\ExampleRequest.xslt`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\Transformations\ExampleResponse.sps`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\Transformations\ExampleResponse.xml`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\Transformations\ExampleResponse.xslt`
+
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLMetaData\RegiX.**Name**Adapter\Example.xml`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSamples\RegiX.**Name**Adapter\ExampleRequest.xml`
+`RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSamples\RegiX.**Name**Adapter\ExampleResponse.xml`
