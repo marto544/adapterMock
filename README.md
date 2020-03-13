@@ -4,18 +4,9 @@
 ## Съдържание
 
 <!-- TOC -->
-
-- [Heading](#heading)
-  * [Sub-heading](#sub-heading)
-    + [Sub-sub-heading](#sub-sub-heading)
-- [Heading](#heading-1)
-  * [Sub-heading](#sub-heading-1)
-    + [Sub-sub-heading](#sub-sub-heading-1)
 - [4. Добавяне на схеми, метаданни, трансформации](#схеми-трансформации)
   * [Sub-heading](#sub-heading-2)
     + [Sub-sub-heading](#sub-sub-heading-2)
-
-
 <!-- /TOC -->
 
 ## 1. Създаване на проект
