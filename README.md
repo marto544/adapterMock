@@ -11,9 +11,10 @@
 - [Heading](#heading-1)
   * [Sub-heading](#sub-heading-1)
     + [Sub-sub-heading](#sub-sub-heading-1)
-- [## 4. Добавяне на схеми, метаданни, трансформации](#схеми-трансформации)
+- [4. Добавяне на схеми, метаданни, трансформации](#схеми-трансформации)
   * [Sub-heading](#sub-heading-2)
     + [Sub-sub-heading](#sub-sub-heading-2)
+
 
 <!-- /TOC -->
 
@@ -302,5 +303,6 @@ namespace DAEU.RegiX.SampleAdapter.APIService
 `RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSchemas\RegiX.**Name**Adapter\Transformations\ExampleResponse.xslt`
 
 `RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLMetaData\RegiX.**Name**Adapter\Example.xml`
+
 `RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSamples\RegiX.**Name**Adapter\ExampleRequest.xml`
 `RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSamples\RegiX.**Name**Adapter\ExampleResponse.xml`
