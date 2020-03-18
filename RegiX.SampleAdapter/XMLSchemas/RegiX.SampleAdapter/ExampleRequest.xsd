@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://egov.bg/RegiX/Sample/ExampleRequest" targetNamespace="http://egov.bg/RegiX/Sample/ExampleRequest" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="ExampleRequest">
+    <xs:annotation>
+      <xs:documentation>Аргумент на примерна операция</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Идентификатор</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="DateFrom" type="xs:dateTime" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>От дата</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="DateTo" type="xs:dateTime" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>До дата</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
