@@ -310,3 +310,17 @@ namespace DAEU.RegiX.SampleAdapter.APIService
 
 `RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSamples\RegiX.**Name**Adapter\ExampleRequest.xml`
 `RegiX.**Name**Adapter\RegiX.**Name**Adapter\XMLSamples\RegiX.**Name**Adapter\ExampleResponse.xml`
+
+
+
+# 4.2 Позиция на 
+
+# RegiXSampleAdapter.Mock RMB -> Add Class ->
+
+# RegiXSampleAdapter.Mock -> Dependancies -> RMB -> Add References -> Double check if the references are added successfully. 
+# Fixing the needed usings by clikcing the yellow bulb and using the mouse button.
+
+
+
+
+
