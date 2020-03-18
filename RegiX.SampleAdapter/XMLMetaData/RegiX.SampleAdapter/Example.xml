@@ -1,0 +1,25 @@
+<AdapterOperation xmlns="http://egov.bg/RegiX/RegiXClientMetadata">
+  <OperationName>Contoso.RegiX.ReferenceAdapter.APIService.IReferenceAPI</OperationName>
+  <Code>ExampleOperation</Code>
+  <ControllerName>APIS</ControllerName>
+  <RequestObjectName>ExampleRequest</RequestObjectName>
+  <Namespace>http://egov.bg/RegiX/Sample/ExampleRequest</Namespace>
+  <IsActive>true</IsActive>
+  <DisplayOperationName>Изпълнява услуга по Справка за примерни данни и тестване  по идентификатор и период</DisplayOperationName>
+  <Parameters>
+    <Parameter>
+      <ParameterInfo>
+        <ParameterName>Identifier</ParameterName>
+        <ParameterLabel>ЕГН или ЛНЧ</ParameterLabel>
+        <IsRequired>true</IsRequired>
+        <IsXmlElement>true</IsXmlElement>
+        <OrderNumber>0</OrderNumber>
+        <ParameterType>
+          <Type>string</Type>
+          <EnumValues />
+        </ParameterType>
+      </ParameterInfo>
+      <ChildParamteters />
+    </Parameter>
+  </Parameters>
+</AdapterOperation>

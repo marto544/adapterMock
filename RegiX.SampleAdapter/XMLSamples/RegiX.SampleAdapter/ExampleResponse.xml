@@ -1,0 +1,8 @@
+<ExampleResponse
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://egov.bg/RegiX/Sample/ExampleResponse">
+  <StringData>string value</StringData>
+  <StringData2>string value 2</StringData2>
+  <IntData>0</IntData>
+</ExampleResponse>

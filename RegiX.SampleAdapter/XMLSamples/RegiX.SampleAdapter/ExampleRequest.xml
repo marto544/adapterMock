@@ -1,0 +1,3 @@
+<ExampleRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://egov.bg/RegiX/Sample/ExampleRequest">
+  <Identifier>12234</Identifier>
+</ExampleRequest>
